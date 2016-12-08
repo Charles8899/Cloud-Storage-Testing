@@ -1,0 +1,30 @@
+初始化
+确认机器上已安装pip后执行
+python init_env.py 
+
+配置
+在测试之前请配置test.cfg 内相关配置项, 详见test.cfg
+
+性能测试
+python storage_test_50k.py              运行50KB 上传/下载/删除测试
+python storage_test_2m.py               运行2 MB 上传/下载/删除测试
+python storage_test_50m.py              运行50MB 上传/下载/删除测试
+
+稳定性测试 
+python storage_stable_test_put_oss.py   测试 OSS 100k 文件上传稳定性
+python storage_stable_test_put_cos.py   测试 COS 100k 文件上传稳定性
+python storage_stable_test_get_oss.py   测试 OSS 100k 文件下载稳定性
+python storage_stable_test_get_cos.py   测试 COS 100k 文件下载稳定性
+
+测试结果
+测试结果保存在对应 *result* 文件中
+格式为：
+Date        Provider(OSS/COS)    Operation   FileSize(Byte)   Latency(ms)
+E.g
+2016-11-18-23:05:40    OSS       DOWNLOAD    102400           183.222
+2016-11-18-23:05:41    OSS       DOWNLOAD    102400           155.455
+2016-11-18-23:05:42    OSS       DOWNLOAD    102400           123.328
+2016-11-18-23:05:43    OSS       DOWNLOAD    102400           235.176
+2016-11-18-23:05:44    OSS       DOWNLOAD    102400           106.358
+
+
